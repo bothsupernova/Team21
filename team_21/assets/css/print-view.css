@@ -1,0 +1,174 @@
+header {
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+}
+
+#logo img {
+    width: 175px;
+    margin-left: auto;
+}
+
+#Title {
+    margin-top: -20px;
+    flex: 1;
+    font-size: large;
+    margin-left: 50px;
+    font-family: "Helvetica", sans-serif;
+}
+
+nav {
+    margin-top: -20px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media print {
+    @page {
+        size: 8.5in 11in;
+        margin: 10mm 10mm 10mm 10mm;
+    }
+
+    body {
+        background-color: #fff !important;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    header,
+    #logo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    #logo img {
+        width: 175px;
+    }
+
+    #Title {
+        flex: 1;
+        font-size: large;
+        margin-left: 50px;
+        font-family: "Helvetica", sans-serif;
+    }
+
+    nav,
+    footer {
+        display: none !important;
+    }
+
+    .color-table,
+    .square-table {
+        page-break-inside: avoid;
+    }
+
+    .color-table,
+    .square-table,
+    .color-table td,
+    .square-table td {
+        border: 1px solid #000;
+    }
+
+    .square-table td {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+body {
+    background-color: white;
+    color: black;
+    filter: grayscale(100%);
+}
+
+.color-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.color-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.color-table td:first-child {
+    width: 20%;
+}
+
+.color-table td:nth-child(2) {
+    width: 80%;
+}
+
+.square-table {
+    display: table;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.square-table td {
+    border: 1px solid #ddd;
+    width: 30px;
+    height: 30px;
+}
+
+.square-table tr:first-child td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.square-table td:first-child {
+    text-align: center;
+    vertical-align: middle;
+}
+
+input[type="text"][name^="color_code"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 80%;
+}
+
+.square-table td:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .color-table,
+    .square-table {
+        width: auto;
+    }
+
+    .color-table td,
+    .square-table td {
+        padding: 5px;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: small;
+}

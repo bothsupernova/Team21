@@ -1,0 +1,50 @@
+/* table-styles.css */
+
+.color-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.color-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.square-table {
+    display: table;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.square-table td {
+    border: 1px solid #ddd;
+    width: 30px; /* Adjust based on preferred size */
+    height: 30px; /* Adjust to keep cells square */
+}
+
+/* Color Input Enhancements */
+input[type="text"][name^="color_code"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 80%; /* Adjust based on layout */
+}
+
+/* Table Cell Enhancements */
+.square-table td:hover {
+    cursor: pointer;
+    opacity: 0.8; /* Visual feedback on hover */
+}
+
+/* Responsive Tables */
+@media (max-width: 600px) {
+    .color-table,
+    .square-table {
+        width: auto;
+    }
+
+    .color-table td,
+    .square-table td {
+        padding: 5px;
+    }
+}
