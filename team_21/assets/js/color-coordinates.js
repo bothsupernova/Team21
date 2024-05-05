@@ -114,3 +114,47 @@ document
 
         window.location.href = fullUrl;
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Existing code for handling color selection
+        const colorSelects = document.querySelectorAll('select[name^="color_code"]');
+        const table = document.querySelector(".square-table");
+        let selectedColor = colorSelects[0].value; // Default to the first color
+    
+        // Add radio buttons for color selection
+        colorSelects.forEach(select => {
+            let radio = document.createElement("input");
+            radio.type = "radio";
+            radio.name = "color-choice";
+            radio.checked = select === colorSelects[0]; // Select the first color by default
+            radio.addEventListener('change', () => {
+                if (radio.checked) {
+                    selectedColor = select.value;
+                }
+            });
+            select.parentNode.insertBefore(radio, select.nextSibling);
+        });
+    
+        // Handle cell clicks for coloring
+        table.addEventListener("click", function (e) {
+            if (e.target.tagName === "TD") {
+                e.target.style.backgroundColor = selectedColor;
+                addCoordinate(e.target.cellIndex, e.target.parentNode.rowIndex, selectedColor);
+            }
+        });
+    
+        // Function to add coordinates to the right column
+        function addCoordinate(x, y, color) {
+            // Implement logic to add coordinates next to the color name in the right column
+            // Sort lexicographically as per the requirement
+        }
+    
+        // Function to handle dynamic color changes
+        function handleColorChange(oldColor, newColor) {
+            // Change all cells from oldColor to newColor
+        }
+    
+        // Apply initial colors
+        applyColors();
+    });
+    
