@@ -95,6 +95,17 @@ nav a:hover {
         width: 20px;
         height: 20px;
     }
+
+    .header, .footer, .controls, .non-print-elements {
+        display: none;  
+    }
+    .color-table td, .color-table th {
+        border: 1px solid #000; 
+    }
+    .color-table .color-swatch {
+        height: 50px; 
+        width: 50px;
+    }
 }
 
 body {

@@ -60,6 +60,21 @@ $rows_columns = intval($rows_columns);
                 <?php endfor; ?>
             </tr>
         <?php endfor; ?>
+        <?php
+// Loop through each color
+for ($i = 0; $i < count($colors); $i++) {
+    echo "<tr>";
+    echo "<td>Color " . ($i + 1) . "</td>"; // Print color index
+    echo "<td>" . htmlspecialchars($colors[$i]) . "</td>"; // Print color name
+    // Calculate coordinates (assuming $rows and $columns are defined)
+    $rowLabel = intdiv($i, $columns) + 1;
+    $colLabel = chr(65 + ($i % $columns)); // Converts to A, B, C, etc.
+    echo "<td>{$colLabel}{$rowLabel}</td>"; // Print coordinates
+    echo "<td style='background-color: " . htmlspecialchars($colors[$i]) . ";'></td>"; // Print color swatch
+    echo "</tr>";
+}
+?>
+
     </table>
 
     <?php include ("content/footer.php"); ?>
